@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detalhes do Contrato</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h1 text-center>
+    Contrato Código: {{selectedItem.codigo}} 
+  </h1>
+  <ion-input type="text" placeholder="Digite o Código" [(ngModel)]="selectedItem.codigo"></ion-input>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Data acordo comercial</ion-label>
+      <!--<ion-input type="text" value="{{selectedItem.dataacordocomercial}}"></ion-input>-->
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="selectedItem.dateAcordo"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Natureza</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.natureza"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Comprador</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.comprador"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Vendedor</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.vendedor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Energia referência</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.energiareferencia"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Energia entregue</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.energiaentregue"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Status aprovação</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.statusaprovacao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Modelo</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.modelo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Preço base contratado</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.precobasecontratado"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Submercado</ion-label>
+      <ion-input type="text" [(ngModel)]="selectedItem.submercado"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Início fornecimento</ion-label>
+      <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="selectedItem.iniFor"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Fim fornecimento</ion-label>>
+      <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="selectedItem.fimFor"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Início vigência</ion-label>
+      <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="selectedItem.iniVig"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Fim vigência</ion-label>
+      <ion-datetime displayFormat="MM/YYYY" [(ngModel)]="selectedItem.fimVig"></ion-datetime>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button color="danger" (click)="itemDelete($event, selectedItem)">Apagar Contrato</button>
+  <button ion-button color="secondary" (click)="itemSave($event, selectedItem)">Salvar Contrato</button>
+</ion-content>

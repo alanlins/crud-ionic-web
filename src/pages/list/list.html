@@ -1,0 +1,42 @@
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lista de Contratos</ion-title>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <!--<ion-row>
+      <ion-col col-2 style="text-align: center;">Código <ion-icon [name]="myIconCodigo" (click)="codigoSort($event)"></ion-icon></ion-col>
+      <ion-col col-2 style="text-align: center;">Natureza <ion-icon [name]="myIconNatureza" (click)="naturezaSort($event)"></ion-icon></ion-col>
+      <ion-col col-2 style="text-align: center;">Comprador <ion-icon [name]="myIconComprador" (click)="compradorSort($event)"></ion-icon></ion-col>
+      <ion-col col-2 style="text-align: center;">Vendedor <ion-icon [name]="myIconVendedor" (click)="vendedorSort($event)"></ion-icon></ion-col>
+      <ion-col col-2 style="text-align: center;">Modelo <ion-icon [name]="myIconModelo" (click)="modeloSort($event)"></ion-icon></ion-col>
+      <ion-col col-2 style="text-align: center;">Submercado <ion-icon [name]="myIconSubmercado" (click)="submercadoSort($event)"></ion-icon></ion-col>
+    </ion-row>-->
+    <div class = "row">
+      <div class = "col col-17" style="text-align: center;">Código <ion-icon [name]="myIconCodigo" (click)="codigoSort($event)"></ion-icon></div>
+      <div class = "col col-17" style="text-align: center;">Natureza <ion-icon [name]="myIconNatureza" (click)="naturezaSort($event)"></ion-icon></div>
+      <div class = "col col-17" style="text-align: center;">Comprador <ion-icon [name]="myIconComprador" (click)="compradorSort($event)"></ion-icon></div>
+      <div class = "col col-17" style="text-align: center;">Vendedor <ion-icon [name]="myIconVendedor" (click)="vendedorSort($event)"></ion-icon></div>
+      <div class = "col col-17" style="text-align: center;">Modelo <ion-icon [name]="myIconModelo" (click)="modeloSort($event)"></ion-icon></div>
+      <div class = "col col-17" style="text-align: center;">Submercado <ion-icon [name]="myIconSubmercado" (click)="submercadoSort($event)"></ion-icon></div>
+    </div>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-row>
+        <div class = "col col-17" style="text-align: left;">{{item.codigo}}</div>
+        <div class = "col col-17" style="text-align: left;">{{item.natureza}}</div>
+        <div class = "col col-17" style="text-align: left;">{{item.comprador}}</div>
+        <div class = "col col-17" style="text-align: left;">{{item.vendedor}}</div>
+        <div class = "col col-17" style="text-align: left;">{{item.modelo}}</div>
+        <div class = "col col-17" style="text-align: left;">{{item.submercado}}</div>
+      </ion-row>
+    </button>
+  </ion-grid>
+  <button ion-button (click)="itemNew($event)">Novo</button>
+</ion-content>
