@@ -8,6 +8,10 @@ $ npm install -g ionic cordova
 
 $ cd crud-ionic-web/
 
+#Compile dependencies
+
+$ npm install
+
 #Start server
 
 $ ionic serve
